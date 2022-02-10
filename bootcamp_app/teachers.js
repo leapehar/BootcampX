@@ -1,3 +1,13 @@
+const {Pool} = require('pg');
+
+const pool = new Pool({
+  user: 'vagrant',
+  password: '123',
+  host: 'localhost',
+  database: 'bootcampx',
+  port: 5432
+});
+
 pool.query(`
 SELECT DISTINCT teachers.name as teacher, cohorts.name as cohort
 FROM teachers
